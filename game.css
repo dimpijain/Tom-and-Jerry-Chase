@@ -1,0 +1,130 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    overflow: hidden;
+}
+.gameContainer{
+    background-image: url("bg.avif");
+    background-repeat: no-repeat;
+    background-size: 100vw 100vh;
+    width: 100%;
+    height: 100vw;
+}
+.goat{
+    background-image: url("jer-removebg-preview.png");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 200px;
+    height: 170px;
+    position: absolute;
+    bottom:6px;
+    margin-left: 40px;
+}
+.obstacle{
+    background-image: url("to-removebg-preview.png");
+    background-size: cover;
+    width: 320px;
+    height:280px;
+    position: absolute;
+    bottom: 0;
+    left: 50vw;
+
+}
+.animategoat{
+    animation: goat 0.6s linear;
+}
+@keyframes goat {
+    0%{
+        bottom: 0;
+    }
+    50%{
+        bottom: 400px;
+    }
+    100%{
+        bottom:0;
+    }
+}
+.obstacleAni{
+    animation: obstacle 5s linear infinite;
+}
+@keyframes obstacle {
+    0%{
+        left: 100vw;
+
+    }
+    100%{
+        left: -40vw;
+    }
+}
+.gameOver{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: lavender;
+    border: 4px  outset white;
+    
+    height: 275px;
+    width: 550px;
+    font-size: 40px;
+    font-family: cursive;
+    position: absolute;
+    margin-top: 29vh;
+    margin-left: 33vw;
+   
+    visibility: hidden;
+    
+    animation: popIn 0.6s ease-in-out forwards;
+
+}
+@keyframes popIn {
+    0% {
+        transform: scale(1); /* Starting at normal size */
+      }
+      50% {
+        transform: scale(1.5); /* Grow larger */
+      }
+      100% {
+        transform: scale(1); /* Return to normal size */
+      }
+}
+.jerry{
+    background-image: url(jer-removebg-preview.png);
+    visibility: hidden;
+    margin-left: 50%;
+    position: fixed;
+
+}
+.tom{
+    background-image: url(to-removebg-preview.png);
+    visibility: hidden;
+    margin-right: 50%;
+    position: fixed;
+}
+
+.scoreCont{
+    position: relative;
+    right: -1323px;
+    top: 23px;
+    border: 2px solid black;
+    height: 50px;
+    width:130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.highscore{
+    position: relative;
+    height: 50px;
+    width: 130px;
+    border: 2px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-left: 100px;
+    margin-top: -30px;
+}
